@@ -25,7 +25,10 @@ def load_data():
     
 
 # Cargar datos
-data = load_data()
+def load_data():
+    df = pd.read_csv("datos_energia.csv", parse_dates=["time"])
+    df.index = df["time"]
+    return df
 
 # Graficar serie
 def plot_series(data, initial_date, proy):
